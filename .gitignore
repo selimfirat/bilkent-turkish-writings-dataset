@@ -1,2 +1,5 @@
 .idea
 *.iml
+.ipynb_checkpoints
+data/full/
+data/texts/

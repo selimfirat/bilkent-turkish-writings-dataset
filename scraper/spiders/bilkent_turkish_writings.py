@@ -34,10 +34,3 @@ class BilkentTurkishWritingsSpider(scrapy.Spider):
                 yield Request(link.url, self.parse)
 
         yield WritingEntry(file_urls=file_urls)
-
-    def save_pdf(self, response):
-        """ Save pdf files """
-        path = response.url.split('/')[-1]
-        self.logger.info('Saving PDF %s', path);
-        with open(path, 'wb') as file:
-            file.write(response.body);
