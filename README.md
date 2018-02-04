@@ -1,6 +1,6 @@
 # Bilkent Turkish Writings Dataset
 
-This dataset contains the turkish creative writings of Turkish 101 and Turkish 102 courses. It contains 4 publicly published writings of students 2 for each course.
+This dataset contains the turkish creative writings of Turkish 101 and Turkish 102 courses between 2014-2018. It contains 4 publicly published writings of students 2 for each course.
 The writings in this dataset promotes creativity, content, composition, grammar, spelling and punctuation.
 
 The writings can be found [here](https://stars.bilkent.edu.tr/turkce/) as bunch of PDFs.
