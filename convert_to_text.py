@@ -1,13 +1,12 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[ ]:
 
 
 # Imports
 import pdfplumber
 import glob
-import numpy as np
 import pandas as pd
 import pathlib
 
@@ -53,7 +52,7 @@ for f in files:
     
 
 
-# In[12]:
+# In[15]:
 
 
 # read texts
@@ -62,21 +61,21 @@ text_files = glob.glob(texts_path + "*")
 texts = []
 for f in text_files:
     with open(f, 'rb') as file:
-        texts.append(file.read())
+        texts.append(file.read().decode("utf-8"))
         
 # Create pandas dataframe for texts
 df = pd.DataFrame({ "text": pd.Series(texts) })
 df.head()
 
 
-# In[13]:
+# In[16]:
 
 
 # Number of writings
 df.shape
 
 
-# In[14]:
+# In[17]:
 
 
 # Convert dataframe to csv
