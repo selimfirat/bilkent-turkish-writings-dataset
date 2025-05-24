@@ -107,19 +107,28 @@ python -c "from dataset_versioning import get_latest_version; print(get_latest_v
 #### Option 2: Hugging Face Datasets Format (Recommended for ML/NLP)
 
 ```python
-from datasets import load_from_disk
-
-# Load from local copy (after cloning)
-dataset = load_from_disk("./hf_datasets/v2")
-
-# Or load directly from Hugging Face Hub
 from datasets import load_dataset
+
+# Load the latest version (v2) - default configuration
 dataset = load_dataset("selimfirat/bilkent-turkish-writings-dataset")
 
-# Access train/validation/test splits
-print(f"Train: {len(dataset['train'])} samples")
-print(f"Validation: {len(dataset['validation'])} samples") 
-print(f"Test: {len(dataset['test'])} samples")
+# Access the data
+for item in dataset['train'].take(5):
+    print(f"Text: {item['text'][:100]}...")
+    print("---")
+
+# Create custom splits if needed
+split_dataset = dataset['train'].train_test_split(test_size=0.2)
+train_data = split_dataset["train"]
+test_data = split_dataset["test"]
+
+# Load specific versions
+dataset_v1 = load_dataset("selimfirat/bilkent-turkish-writings-dataset", "v1")  # 6,844 entries
+dataset_v2 = load_dataset("selimfirat/bilkent-turkish-writings-dataset", "v2")  # 9,119 entries
+
+# Or load from local copy (after cloning)
+from datasets import load_from_disk
+dataset = load_from_disk("./hf_datasets/v2")
 ```
 
 #### Option 3: Zenodo Repository (Recommended for archival access)
@@ -143,6 +152,103 @@ print(f"Latest version: {latest['version']} with {latest['num_entries']} entries
 # Load as pandas DataFrame
 df = pd.read_csv(f"./versions/{latest['version']}/texts.csv")
 print(df.head())
+```
+
+## 🤗 Hugging Face Hub Usage
+
+The dataset is also available on Hugging Face Hub for easy integration with machine learning workflows:
+
+**🔗 Dataset URL**: [https://huggingface.co/datasets/selimfirat/bilkent-turkish-writings-dataset](https://huggingface.co/datasets/selimfirat/bilkent-turkish-writings-dataset)
+
+### Quick Access
+
+```python
+from datasets import load_dataset
+
+# Load the latest version (v2) - default configuration
+dataset = load_dataset("selimfirat/bilkent-turkish-writings-dataset")
+print(f"Number of entries: {len(dataset['train'])}")  # 9,119 entries
+```
+
+### Version Information
+
+This dataset provides multiple configurations:
+
+- **Default (v2)**: Latest dataset with 9,119 entries (2014-2025) - **Recommended**
+- **v1**: Original dataset with 6,844 entries (2014-2018)
+- **v2**: Same as default, explicitly named configuration
+
+### Accessing Different Versions
+
+```python
+from datasets import load_dataset
+
+# Method 1: Load default version (v2 - recommended)
+dataset = load_dataset("selimfirat/bilkent-turkish-writings-dataset")
+
+# Method 2: Explicitly load v2 configuration
+dataset_v2 = load_dataset("selimfirat/bilkent-turkish-writings-dataset", "v2")
+
+# Method 3: Load v1 configuration (original version)
+dataset_v1 = load_dataset("selimfirat/bilkent-turkish-writings-dataset", "v1")
+
+# All methods above return the same structure
+print(f"Number of entries: {len(dataset['train'])}")
+print(f"First text preview: {dataset['train'][0]['text'][:100]}...")
+```
+
+### Dataset Structure
+
+Each entry contains:
+- **text**: The full text content of the writing
+
+### Creating Custom Splits
+
+```python
+# The dataset comes as a single 'train' split
+# Create your own train/validation/test splits as needed:
+dataset = load_dataset("selimfirat/bilkent-turkish-writings-dataset")
+
+# Create train/test split (80/20)
+split_dataset = dataset['train'].train_test_split(test_size=0.2, seed=42)
+train_data = split_dataset["train"]
+test_data = split_dataset["test"]
+
+# Create train/validation/test split (70/15/15)
+train_test = dataset['train'].train_test_split(test_size=0.3, seed=42)
+train_data = train_test['train']
+temp_data = train_test['test']
+
+val_test = temp_data.train_test_split(test_size=0.5, seed=42)
+val_data = val_test['train']
+test_data = val_test['test']
+
+print(f"Train: {len(train_data)} samples")
+print(f"Validation: {len(val_data)} samples")
+print(f"Test: {len(test_data)} samples")
+```
+
+### Integration with Transformers
+
+```python
+from datasets import load_dataset
+from transformers import AutoTokenizer, AutoModel
+
+# Load dataset
+dataset = load_dataset("selimfirat/bilkent-turkish-writings-dataset")
+
+# Load a Turkish language model
+tokenizer = AutoTokenizer.from_pretrained("dbmdz/bert-base-turkish-cased")
+model = AutoModel.from_pretrained("dbmdz/bert-base-turkish-cased")
+
+# Tokenize the dataset
+def tokenize_function(examples):
+    return tokenizer(examples['text'], truncation=True, padding=True, max_length=512)
+
+tokenized_dataset = dataset.map(tokenize_function, batched=True)
+
+# Use for training or fine-tuning
+print(f"Tokenized dataset: {tokenized_dataset}")
 ```
 
 ## 🔄 Dataset Maintenance
@@ -401,7 +507,7 @@ GitHub Repository: https://github.com/selimfirat/bilkent-turkish-writings-datase
 - **Original Content Creators**: Students and instructors of Turkish 101 and 102 courses at Bilkent University (2014-2025)
 - **Bilkent University Turkish Department** for creating and publishing the original writings
 - **Bilkent University** for supporting open educational resources and public access
-- **Dataset Compiler**: Selim F. Yilmaz for collecting, processing, structuring, and distributing the dataset
+- **Dataset Compiler**: Selim F. Yilmaz for collecting, processing, and structuring the dataset.
 
 **Important**: This dataset is a compilation of existing publicly available content. The original creative works were authored by Bilkent University students and instructors. The contribution of this project lies in the systematic collection, processing, and structuring of this content for research purposes.
 

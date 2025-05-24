@@ -42,9 +42,8 @@ def convert_to_hf_dataset(version=None):
     # Save the dataset
     dataset.save_to_disk(output_dir)
     
-    # Save metadata
-    with open(f"{output_dir}/metadata.json", 'w', encoding='utf-8') as f:
-        json.dump(metadata, f, ensure_ascii=False, indent=2)
+    # Note: We don't save metadata.json in the dataset directory to avoid schema conflicts
+    # The metadata is returned and can be used elsewhere
     
     print(f"Dataset {version} converted and saved to {output_dir}")
     
