@@ -1,0 +1,45 @@
+Academic Use License
+
+Copyright (c) 2025 Selim F. Yilmaz (Dataset Compilation & Processing)
+
+This dataset is a compilation of publicly available Turkish writings originally created by students and instructors at Bilkent University. The dataset compilation, processing, and distribution tools are provided for academic and research purposes only.
+
+PERMITTED USES:
+- Academic research and education
+- Non-commercial research projects
+- Educational coursework and assignments
+- Scientific publications and studies
+- Personal learning and experimentation
+
+RESTRICTIONS:
+- Commercial use is prohibited
+- Redistribution for profit is prohibited
+- Use in commercial products or services is prohibited
+
+CONDITIONS:
+- Attribution — You must give appropriate credit to the original authors and data sources
+- You must cite this dataset in any publications or research that uses this data
+- You must include a reference to the original source (Bilkent University Turkish Department)
+
+DATASET ATTRIBUTION REQUIREMENTS:
+When using this dataset, please cite both the dataset compilation and the original source:
+
+Dataset Compilation:
+Yilmaz, S. F. (2025). Compilation of Bilkent Turkish Writings Dataset. Zenodo. https://doi.org/10.5281/zenodo.15498155
+
+Original Content Source: 
+Bilkent University Turkish Department
+Source URL: https://stars.bilkent.edu.tr/turkce/
+GitHub Repository: https://github.com/selimfirat/bilkent-turkish-writings-dataset
+
+DISCLAIMER:
+This dataset compilation is provided "as is" without warranty of any kind, express or implied.
+The dataset contains student writings from Turkish 101 and 102 courses (2014-2025)
+that were originally published publicly by Bilkent University.
+
+The original creative content was authored by Bilkent University students and instructors.
+This project's contribution is the systematic collection, processing, and structuring 
+of publicly available content for research purposes.
+
+The compiler makes no representations about the suitability of this dataset for any purpose.
+In no event shall the compiler be liable for any damages arising from the use of this dataset.

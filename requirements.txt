@@ -1,3 +1,6 @@
 scrapy
 pdfplumber
 pandas
+datasets
+huggingface-hub
+argparse

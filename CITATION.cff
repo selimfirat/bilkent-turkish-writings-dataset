@@ -1,0 +1,95 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "Compilation of Bilkent Turkish Writings Dataset"
+authors:
+  - family-names: "Yilmaz"
+    given-names: "Selim F."
+    orcid: "https://orcid.org/0000-0002-0486-7731"
+    role: "Dataset Compiler"
+repository-code: "https://github.com/selimfirat/bilkent-turkish-writings-dataset"
+url: "https://github.com/selimfirat/bilkent-turkish-writings-dataset"
+abstract: >-
+  A comprehensive compilation of Turkish creative writings from Bilkent University's 
+  Turkish 101 and Turkish 102 courses (2014-2025). This dataset contains 9,119 
+  student writings originally created by Bilkent University students and instructors, 
+  focusing on creativity, content, composition, grammar, spelling, and punctuation 
+  development. The writings were originally published publicly by Bilkent University 
+  and have been systematically collected, processed, and structured into a research 
+  dataset. Version 2.0 represents a significant expansion with 33% more content 
+  compared to the initial release, making it one of the largest publicly available 
+  Turkish creative writing corpora for academic research. The dataset includes 
+  comprehensive metadata and is optimized for natural language processing, 
+  educational research, and linguistic analysis. Note: This is a compilation of 
+  existing content - the original creative works were authored by Bilkent University 
+  students and instructors.
+keywords:
+  - Turkish language
+  - creative writing
+  - educational dataset
+  - natural language processing
+  - corpus linguistics
+  - language learning
+  - text analysis
+  - academic writing
+  - student writing
+  - Turkish corpus
+  - machine learning
+  - digital humanities
+  - educational technology
+  - text mining
+  - computational linguistics
+license: "Academic Use Only"
+version: "2.0"
+date-released: "2025-05-24"
+doi: "10.5281/zenodo.15498155"
+preferred-citation:
+  type: dataset
+  authors:
+    - family-names: "Yilmaz"
+      given-names: "Selim F."
+  title: "Compilation of Bilkent Turkish Writings Dataset"
+  year: 2025
+  publisher: "Zenodo"
+  doi: "10.5281/zenodo.15498155"
+  url: "https://doi.org/10.5281/zenodo.15498155"
+
+# Additional metadata for comprehensive citation
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.15498155"
+  - type: url
+    value: "https://github.com/selimfirat/bilkent-turkish-writings-dataset"
+
+# Related resources
+references:
+  - type: article
+    title: "Turkish Language Education at Bilkent University"
+    authors:
+      - name: "Bilkent University Turkish Department"
+    url: "https://stars.bilkent.edu.tr/turkce/"
+
+# Technical specifications
+file-format: "CSV"
+size: "~45MB"
+entries: 9119
+encoding: "UTF-8"
+languages:
+  - "tr"  # Turkish
+
+# Research applications
+applications:
+  - "Natural Language Processing"
+  - "Educational Research" 
+  - "Corpus Linguistics"
+  - "Machine Learning"
+  - "Digital Humanities"
+
+# Funding and acknowledgments
+acknowledgments: >-
+  We acknowledge Bilkent University Turkish Department and the students and instructors 
+  who created the original writings included in this compilation. The original content 
+  creators are the primary authors of the creative works. This dataset represents a 
+  systematic collection, processing, and structuring of publicly available content 
+  for research purposes. Special thanks to Bilkent University for making these writings 
+  publicly accessible and supporting open educational resources.
