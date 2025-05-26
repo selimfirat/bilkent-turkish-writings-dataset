@@ -31,6 +31,7 @@ A comprehensive collection of Turkish creative writings from Bilkent University'
 - **Research Ready**: Pre-processed and structured for immediate use in NLP and educational research
 - **Continuous Updates**: Regular updates with new semester publications
 - **Open Access**: Freely available for academic and research purposes
+- **Research Impact**: Used in 8+ academic publications across multiple Turkish NLP research areas ([see publications](WORKS_USING_DATASET.md))
 
 ## Dataset Versions
 
@@ -366,6 +367,40 @@ This dataset is suitable for various research and applications:
 - **Cultural Analysis**: Social and cultural themes in student writing
 - **Historical Linguistics**: Language change and variation studies
 - **Digital Pedagogy**: Technology-enhanced writing instruction research
+
+## 📚 Research Impact & Publications
+
+This dataset has been used in various academic research projects and publications. For a comprehensive list of works that have used this dataset, see [**WORKS_USING_DATASET.md**](WORKS_USING_DATASET.md).
+
+### Recent Publications (2020-2025)
+
+The dataset has been utilized in **8+ academic publications** spanning multiple research areas:
+
+1. Uludoğan et al. (2024). TURNA: A Turkish Encoder-Decoder Language Model. *arXiv:2401.14373*.
+2. Ismayilzada et al. (2024). Evaluating Morphological Compositional Generalization in Large Language Models. *NAACL 2025*.
+3. Uluslu, A. Y. (2022). Automatic Lexical Simplification for Turkish. *arXiv:2201.05878*.
+4. Altinok, D. (2024). Bella Turca: A Large-Scale Dataset of Diverse Text Sources for Turkish Language Modeling. *TSD 2024*.
+5. Turker et al. (2024). VNLP: Turkish NLP Package. *arXiv:2403.01309*.
+6. Sonmezoz, K. & Amasyali, M. F. (2021). Same Sentence Prediction: A new Pre-training Task for BERT. *IEEE ASYU*.
+7. Müngen et al. (2020). Finding the Relationship Between News and Social Media Users' Emotions in the COVID-19 Process. *Sakarya Univ. J. Comput. Inf. Sci.*
+8. Corpus Stylistics Study of Turkish Texts (Derlem Üslupcusu). *[Turkish corpus stylistics research]*.
+
+### Research Areas Where the Dataset is Used
+
+1. **Turkish Language Models**: Training and evaluation of language models
+2. **Educational NLP**: Automated writing assessment and feedback systems
+3. **Morphological Research**: Turkish agglutination and word formation studies
+4. **Cross-lingual Studies**: Multilingual model development and evaluation
+5. **Computational Linguistics**: Large-scale corpus analysis and pattern recognition
+
+### Citation Impact
+
+- **Growing Usage**: Increasing adoption in Turkish NLP research community
+- **International Recognition**: Papers accepted to major conferences (NAACL, TSD, IEEE)
+- **Diverse Applications**: From basic text processing to advanced AI systems
+- **Academic Standards**: Established as a standard resource for Turkish language research
+
+For detailed information about each publication, including DOIs, abstracts, and specific usage details, please refer to the [**WORKS_USING_DATASET.md**](WORKS_USING_DATASET.md) file.
 
 ## 🤝 Contributing
 
